@@ -1,0 +1,133 @@
+<mat-tab-group class="posicao">
+  <mat-tab label="PRÓXIMAS">
+    <mat-progress-bar *ngIf="!next" mode="indeterminate"></mat-progress-bar>
+    <div *ngIf="next" fxLayout="row wrap" fxLayoutAlign="start center" style="padding: 2%">
+
+      <ng-container *ngFor="let live of liveNext" style="margin: 0.5%;">
+
+        <mat-card class="mat-card-live" fxFlex="0 1 calc(33.3% - 11px)" fxFlex.lt-md="0 1 calc(50% - 11px)"
+          fxFlex.lt-sm="100%">
+
+          <mat-card-title class="mat-card-title-live">
+            <div class="row">
+              <p>
+                <mat-chip class="mat-chip-live" fxFlex="33" fxLayoutAlign="center center">
+                  <span style="font-size:0.9rem;">{{live.liveName}}</span>
+                </mat-chip>
+                <span fxFlex></span>
+                <mat-chip class="mat-chip-date" fxFlex="33" fxLayoutAlign="center center">
+                  <span style="font-size:0.7rem;">{{live.liveDate | localDateTime}}</span>
+                </mat-chip>
+              </p>
+              <p>
+                 <mat-chip class="mat-chip-canal" fxFlex="33" fxLayoutAlign="center center">
+                   <span style="font-size:0.9rem;">{{live.channelName}}</span>
+                 </mat-chip>
+                  <span fxFlex></span>
+                 <mat-chip class="mat-chip-categoria" fxFlex="33" fxLayoutAlign="center center">
+                   <span style="font-size:0.9rem;">{{live.categoria}}</span>
+                 </mat-chip>
+              </p>
+            </div>
+          </mat-card-title>
+          <mat-card-content fxLayoutAlign="center center">
+            <div>
+              <iframe width="560" height="315" [src]="live.urlSafe" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+          </mat-card-content>
+          <!-- <mat-card-actions style="margin:1px;padding-bottom:5px; padding-top: 5px;">
+          </mat-card-actions> -->
+        </mat-card>
+      </ng-container>
+    </div>
+  </mat-tab>
+  <mat-tab label="REALIZADAS">
+    <mat-progress-bar *ngIf="!previous" mode="indeterminate"></mat-progress-bar>
+    <div *ngIf="previous" fxLayout="row wrap" fxLayoutAlign="start center" style="padding: 2%">
+      <!-- <div fxFlex="100" style="margin-left: 0.5%; font-weight: bold;">REALIZADAS</div> -->
+      <ng-container *ngFor="let live of livePrevious" style="margin: 0.5%;">
+
+        <mat-card class="mat-card-live" fxFlex="0 1 calc(33.3% - 11px)" fxFlex.lt-md="0 1 calc(50% - 11px)"
+          fxFlex.lt-sm="100%">
+
+          <mat-card-title class="mat-card-title-live">
+            <div class="row">
+              <p>
+                <mat-chip class="mat-chip-live" fxFlex="33" fxLayoutAlign="center center">
+                  <span style="font-size:0.9rem;">{{live.liveName}}</span>
+                </mat-chip>
+                <span fxFlex></span>
+                <mat-chip class="mat-chip-date" fxFlex="33" fxLayoutAlign="center center">
+                  <span style="font-size:0.7rem;">{{live.liveDate | localDateTime}}</span>
+                </mat-chip>
+              </p>
+              <p>
+                 <mat-chip class="mat-chip-canal" fxFlex="33" fxLayoutAlign="center center">
+                   <span style="font-size:0.9rem;">{{live.channelName}}</span>
+                 </mat-chip>
+                  <span fxFlex></span>
+                 <mat-chip class="mat-chip-categoria" fxFlex="33" fxLayoutAlign="center center">
+                   <span style="font-size:0.9rem;">{{live.categoria}}</span>
+                 </mat-chip>
+              </p>
+            </div>
+          </mat-card-title>
+          <mat-card-content fxLayoutAlign="center center">
+            <div>
+              <iframe width="560" height="315" [src]="live.urlSafe" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+          </mat-card-content>
+          <!-- <mat-card-actions style="margin:1px;padding-bottom:5px; padding-top: 5px;">
+          </mat-card-actions> -->
+        </mat-card>
+      </ng-container>
+    </div>
+
+  </mat-tab>
+  <mat-tab label="RESULTADO(S) DA PESQUISA">
+    <mat-progress-bar *ngIf="!tudo" mode="indeterminate"></mat-progress-bar>
+    <div *ngIf="tudo" fxLayout="row wrap" fxLayoutAlign="start center" style="padding: 2%">
+      <ng-container *ngFor="let live of categorias" style="margin: 0.5%;">
+
+        <mat-card class="mat-card-live" fxFlex="0 1 calc(33.3% - 11px)" fxFlex.lt-md="0 1 calc(50% - 11px)"
+          fxFlex.lt-sm="100%">
+
+          <mat-card-title class="mat-card-title-live">
+            <div class="row">
+              <p>
+                <mat-chip class="mat-chip-live" fxFlex="33" fxLayoutAlign="center center">
+                  <span style="font-size:0.9rem;">{{live.liveName}}</span>
+                </mat-chip>
+                <span fxFlex></span>
+                <mat-chip class="mat-chip-categoria" fxFlex="25" fxLayoutAlign="center center">
+                     <span style="font-size:0.9rem;">{{live.categoria}}</span>
+                </mat-chip>
+
+              </p>
+              <p>
+                 <mat-chip class="mat-chip-canal" fxFlex="33" fxLayoutAlign="center center">
+                   <span style="font-size:0.9rem;">{{live.channelName}}</span>
+                 </mat-chip>
+                  <span fxFlex></span>
+                  <mat-chip class="mat-chip-date" fxFlex="25" fxLayoutAlign="center center">
+                    <span style="font-size:0.7rem;">{{live.liveDate | localDateTime}}</span>
+                  </mat-chip>
+              </p>
+            </div>
+          </mat-card-title>
+          <mat-card-content fxLayoutAlign="center center">
+            <div>
+              <iframe width="560" height="315" [src]="live.urlSafe" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </ng-container>
+    </div>
+  </mat-tab>
+</mat-tab-group>

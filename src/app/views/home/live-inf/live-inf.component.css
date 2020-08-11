@@ -1,0 +1,19 @@
+.mat-chip-date {
+  background-color: #90caf9;
+  color: black !important;
+}
+
+.mat-chip-categoria {
+  background-color: red;
+  color: white !important;
+}
+
+.mat-chip-live {
+  background-color: greenyellow;
+  color: black !important;
+}
+
+.mat-chip-canal {
+  background-color: yellow;
+  color: black !important;
+}
