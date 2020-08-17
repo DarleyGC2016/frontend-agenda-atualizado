@@ -37,8 +37,14 @@
                 allowfullscreen></iframe>
             </div>
           </mat-card-content>
-          <!-- <mat-card-actions style="margin:1px;padding-bottom:5px; padding-top: 5px;">
-          </mat-card-actions> -->
+          <mat-card-actions fxLayoutAlign="center center" style="margin:1px;padding-bottom:5px; padding-top: 5px;">
+              <button mat-raised-button color="warn" (click)="excluir(live.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+              <button mat-raised-button color="primary" (click)="update(live)">
+                <mat-icon>edit</mat-icon>
+              </button>
+          </mat-card-actions>
         </mat-card>
       </ng-container>
     </div>
@@ -81,8 +87,14 @@
                 allowfullscreen></iframe>
             </div>
           </mat-card-content>
-          <!-- <mat-card-actions style="margin:1px;padding-bottom:5px; padding-top: 5px;">
-          </mat-card-actions> -->
+          <mat-card-actions fxLayoutAlign="center center" style="margin:1px;padding-bottom:5px; padding-top: 5px;">
+              <button mat-raised-button color="warn" (click)="excluir(live.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+              <button mat-raised-button color="primary" (click)="update(live)">
+                <mat-icon>edit</mat-icon>
+              </button>
+          </mat-card-actions>
         </mat-card>
       </ng-container>
     </div>

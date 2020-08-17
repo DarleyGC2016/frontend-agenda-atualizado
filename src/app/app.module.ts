@@ -26,6 +26,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LiveInfComponent } from './views/home/live-inf/live-inf.component';
 import { PesquisarCategoriaComponent } from './views/home/pesquisar-categoria/pesquisar-categoria.component';
+import { LiveUpdateComponent } from './views/home/live-update/live-update.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { PesquisarCategoriaComponent } from './views/home/pesquisar-categoria/pe
     LiveFormDialogComponent,
     LiveInfComponent,
     PesquisarCategoriaComponent,
+    LiveUpdateComponent,
   ],
   imports: [
     HttpClientModule,

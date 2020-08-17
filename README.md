@@ -1,8 +1,24 @@
 ### Agenda Live
 
 Eu fiquei sabendo desse projeto no canal da Michelli Brito no Youtube e no Github dela.
-Acrescente algumas funcionalidades que são: - Criei categoria para as lives;
-Apresentei as lives que irão acontecer e as próximas numa nova aba chamada 'CATEGORIA';
-Criei mais um botão no toolbar para informar as descrições das lives que são: - - Nome da Live; - Nome do Canal; - Data da live; - Categorias da live;
-Coloquei cores nas descrições das lives e acrescente gênero;
+Acrescentei algumas novas funcionalidades que são:
+
+- Criei categoria para as lives;
+- Mudei aba chamada 'CATEGORIA' para
+  'RESULTADO(S) DA PESQUISA';
+
+* Coloquei cores nas descrições das lives e acrescentei categorias;
+
+- Mudei a cor de fundo do toolbar;
+  Criei mais dois botões no toolbar um para pesquisar uma(s) lives por
+  categoria e o outro para informar as descrições das lives que são:
+
+- Nome da Live;
+
+* Nome do Canal;
+
+- Data da live;
+
+* Categorias da live;
+
 Estou usando o **Angular 10** neste projeto.

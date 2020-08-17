@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { LiveService } from 'src/app/shared/service/live.service';
 import { Live } from 'src/app/shared/model/live.model';
 import { DomSanitizer } from '@angular/platform-browser';
+import { MatDialog } from '@angular/material/dialog';
+import { LiveUpdateComponent } from '../live-update/live-update.component';
 
 @Component({
   selector: 'app-live-list',
@@ -19,7 +21,8 @@ export class LiveListComponent implements OnInit {
   categorias: Live[];
   constructor(
     public liveService: LiveService,
-    public sanitizer: DomSanitizer
+    public sanitizer: DomSanitizer,
+    public dialogo: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -30,7 +33,9 @@ export class LiveListComponent implements OnInit {
   getLives() {
     this.liveService.getLiveWithFlag('previous').subscribe((data) => {
       this.livePrevious = data.content;
+
       console.log(this.livePrevious);
+      console.log(data);
       this.livePrevious.forEach((live) => {
         live.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(
           live.liveLink
@@ -66,6 +71,34 @@ export class LiveListComponent implements OnInit {
           });
           this.tudo = true;
         });
+    });
+  }
+
+  excluir(id: string) {
+    this.liveService.deleteLive(id).subscribe((data) => console.log(data));
+    window.location.reload();
+  }
+
+  update(live: Live) {
+    let dateTime = live.liveDate.split('T');
+    let date = dateTime[0];
+    let time = dateTime[1];
+
+    let dialogoRef = this.dialogo.open(LiveUpdateComponent, {
+      data: {
+        id: live.id,
+        liveName: live.liveName,
+        channelName: live.channelName,
+        categoria: live.categoria,
+        liveLink: live.liveLink,
+        liveDate: date,
+        liveTime: time,
+      },
+      minWidth: '400px',
+    });
+
+    dialogoRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
     });
   }
 }

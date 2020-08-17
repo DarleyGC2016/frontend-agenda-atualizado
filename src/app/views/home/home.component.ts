@@ -37,7 +37,6 @@ export class HomeComponent implements OnInit {
     const dialogRef = this.dialog.open(PesquisarCategoriaComponent, {
       minWidth: '400px',
     });
-
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed');
     });

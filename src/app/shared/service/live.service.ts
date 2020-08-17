@@ -33,11 +33,23 @@ export class LiveService {
     );
   }
 
-  public addCategoria(cater: string) {
-    LiveService.emitirCategoria.emit(cater);
+  public addCategoria(categoria: string) {
+    LiveService.emitirCategoria.emit(categoria);
   }
 
   public getLiveWithCategoria(categoria: string): Observable<Live[]> {
     return this.httpClient.get<any>(this.apiUrl + '/cat/' + categoria);
+  }
+
+  public deleteLive(id: string): Observable<ResponsePageable> {
+    return this.httpClient.delete<ResponsePageable>(this.apiUrl + '/' + id);
+  }
+
+  public getSingleLive(id: string): Observable<Live> {
+    return this.httpClient.delete<Live>(this.apiUrl + '/' + id);
+  }
+
+  public updateSingleLive(id: string, live: Live): Observable<Live> {
+    return this.httpClient.put<Live>(this.apiUrl + '/' + id, live);
   }
 }
