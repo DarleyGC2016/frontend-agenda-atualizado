@@ -22,6 +22,6 @@ Acrescentei algumas novas funcionalidades que são:
 - Data da live;
 
 - Categorias da live;
-- Cada Live pode ser editada e também excluida;
+- Cada Live pode ser editada e também excluida. Nas abas REALIZADAS e PRÓXIMAS;
 
 Estou usando o **Angular 10** neste projeto.
